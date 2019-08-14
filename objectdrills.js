@@ -7,7 +7,7 @@ let loaf = {
     }
   };
   
-  console.log(loaf.hydration());
+//  console.log(loaf.hydration());
 
 //Iterating over Obj prop
   let obj = {
@@ -19,5 +19,20 @@ let loaf = {
   }
 
   for(let keys in obj)
-  console.log(keys)
+//  console.log(keys)
 
+// Arrays in objects
+
+let obj2 = {
+  meals: [
+    'breakfast',
+    'second breakfast',
+    'elevenses',
+    'lunch',
+    'afternoon tea',
+    'dinner',
+    'supper'
+  ]
+};
+
+//console.log(obj2.meals[3]);
