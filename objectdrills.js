@@ -9,7 +9,7 @@ let loaf = {
   
   console.log(loaf.hydration());
 
-  //Iterating over Obj prop
+//Iterating over Obj prop
   let obj = {
       foo: 'boo',
       bar: 'far',
@@ -20,3 +20,4 @@ let loaf = {
 
   for(let keys in obj)
   console.log(keys)
+
