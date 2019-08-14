@@ -39,22 +39,54 @@
 
 //Arrays of Objects
 let people = [
-    pers1 = {
-        name: 'James',
-        jobTitle: 'Unemployed'
-    },
+  pers1 = {
+    name: 'James',
+    jobTitle: 'Unemployed'
+  },
 
-    pers2 = {
-        name: 'Alexander',
-        jobTitle: 'Full time student'
-    },
+  pers2 = {
+    name: 'Alexander',
+    jobTitle: 'Full time student'
+  },
 
-    pers3 = {
-        name: 'Andrea',
-        jobTitle: 'Instructor'
-    }
-]
+  pers3 = {
+    name: 'Andrea',
+    jobTitle: 'Instructor'
+  }
+];
 
 for(let i=0; i<people.length; i++){
     console.log(people[i])
+}
+
+//Properties that aren't there
+
+//working on class thing, please ignore for now
+
+// function Bossify(person, bossName) {
+//    person.boss = bossName;
+//  }
+
+ let people = [
+  pers1 = {
+      name: 'James',
+      jobTitle: 'Unemployed'
+  },
+
+  pers2 = {
+      name: 'Alexander',
+      jobTitle: 'Full time student'
+  },
+
+  pers3 = {
+      name: 'Andrea',
+      jobTitle: 'Instructor'
+  }
+]
+people[0].boss='no one'
+people[1].boss = 'Andrea'
+people[2].boss = 'Thinkful'
+
+for(let i=0; i<people.length; i++){
+ console.log(`${people[i].jobTitle} ${people[i].name} reports to ${people[i].boss}`)
 }
