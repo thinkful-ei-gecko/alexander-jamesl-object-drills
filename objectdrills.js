@@ -1,3 +1,5 @@
+'use strict';
+
 //Object initializers and methods
 // let loaf = {
 //     flour: 300,
@@ -93,29 +95,65 @@
 
 //Cracking the Code
 
-let cipher ={
-      a: 1,
-      b: 2,
-      c: 3,
-      d: 4
-  };
+// let cipher ={
+//       a: 1,
+//       b: 2,
+//       c: 3,
+//       d: 4
+//   };
 
-function decode(word){
-    for(let ltr in cipher){
-        if(word[0]===ltr){
-            return word[cipher[ltr]]
-        }
+// function decode(word){
+//     for(let ltr in cipher){
+//         if(word[0]===ltr){
+//             return word[cipher[ltr]]
+//         }
+//     }
+//     return ' '
+// }
+
+// function decodeWords(sent){
+//     let wordArr = sent.split(" ");
+//     return wordArr.reduce(function(accumulator, currentValue){
+//         return accumulator + decode(currentValue)
+//     }, '');
+// }
+
+// let code = 'craft block argon meter bells brown croon droop'
+// console.log(decodeWords(code))
+
+// Factory Functions with LOTR
+
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    describe(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`)
+    },
+    evaluateFight(character){
+      return `Your opponent takes ${this.attack - character.defense} damage and you receive ${character.attack - this.defense} damage.`
     }
-    return ' '
+  };
 }
 
-function decodeWords(sent){
-    let wordArr = sent.split(" ");
-    return wordArr.reduce(function(accumulator, currentValue){
-        return accumulator + decode(currentValue)
-    }, '');
-}
+let characters = [
+  createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', '10', '6'),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', '2', '1'),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', '3', '2'),
+  createCharacter('Aragorn son of Arathorn',  'aragorn', 'Man', 'Dunnedain', '6', '8'),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', '8', '5'),
+  createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', '5', '5')
+];
 
-let code = 'craft block argon meter bells brown croon droop'
-console.log(decodeWords(code))
 
+characters.find(character => character.nickname === 'aragorn').describe();
+
+let hobbits = characters.filter(character => character.race === 'Hobbit');
+//console.log(hobbits);
+
+let aboveAverageStrength = characters.filter(character => character.attack > 5);
+//console.log(aboveAverageStrength);
